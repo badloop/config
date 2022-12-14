@@ -1,27 +1,33 @@
 format = """
-[](bg:none fg:dark-grey)\
-[  ](bg:dark-grey fg:bold white)\
-[ ](fg:dark-grey bg:light-green)\
+[ ](bg:dark-grey)\
+[ \uf179 ](bg:dark-grey fg:bold white)\
+[\ueb70 ](fg:dark-grey bg:light-green)\
 $directory\
-[ ](fg:light-green bg:dark-magenta)\
+[\ueb70 ](fg:light-green bg:dark-magenta)\
 $git_branch\ 
 $git_status\
-[ ](fg:dark-magenta bg:light-blue)\
+[\ueb70 ](fg:dark-magenta bg:light-blue)\
 $docker_context\
-[ ](fg:light-blue bg:light-yellow)\
+[\ueb70 ](fg:light-blue bg:light-yellow)\
 $python\
-[ ](fg:light-yellow bg:red)\
+[\ueb70 ](fg:light-yellow bg:red)\
 $nodejs\
-[ ](fg:red)\
+[\ueb70 ](fg:red)\
+$lua\
+$golang\
 $time 
 $character
 """
 palette = 'nightfox'
 
+[character]
+success_symbol = '[﬌](fg:bold light-green)'
+error_symbol = '[﬌](fg:bold red)'
+
 [directory]
 read_only = " "
 style = "bg:light-green fg:bold black"
-format = "[  $path ]($style)"
+format = "[ \uf115 $path ]($style)"
 truncation_length = 3
 truncation_symbol = "…/"
 
@@ -52,7 +58,7 @@ symbol = " "
 
 [python]
 symbol = " "
-format = '[via ${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) ) ]($style)'
+format = '[via ${symbol}${pyenv_prefix}(${version} )(\($virtualenv\)) ]($style)'
 style='bg:light-yellow fg:black'
 
 [rust]
