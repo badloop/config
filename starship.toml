@@ -1,0 +1,68 @@
+format = """
+[](bg:none fg:dark-grey)\
+[  ](bg:dark-grey fg:bold white)\
+[ ](fg:dark-grey bg:light-green)\
+$directory\
+[ ](fg:light-green bg:dark-magenta)\
+$git_branch\ 
+$git_status\
+[ ](fg:dark-magenta bg:dark-blue)\
+$docker_context\
+[ ](fg:dark-blue bg:light-yellow)\
+$python\
+[ ](fg:light-yellow)\
+$time 
+$character
+"""
+palette = 'nightfox'
+
+[directory]
+read_only = " "
+style = "bg:light-green fg:bold black"
+format = "[  $path ]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
+
+[docker_context]
+symbol = " "
+style = 'bg:dark-blue'
+format = '[via $symbol$context ]($style)'
+
+[git_branch]
+style = 'bg:dark-magenta fg:bold light-magenta'
+symbol = " "
+format = '[on $symbol$branch(:$remote_branch) ]($style)'
+
+[git_status]
+style = 'bg:dark-magenta'
+format = '([\[$all_status$ahead_behind\] ]($style))'
+
+[golang]
+symbol = " "
+
+[lua]
+symbol = " "
+
+[nodejs]
+symbol = " "
+
+[python]
+symbol = " "
+format = '[via ${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) ) ]($style)'
+style='bg:light-yellow fg:black'
+
+[rust]
+symbol = " "
+
+## Custom palettes
+[palettes.nightfox]
+dark-grey = '#222222'
+dark-blue = '#29394f'
+light-blue = '#719cd6'
+light-green = '#81b29a'
+black = '#000000'
+light-magenta = '#cdbbea'
+magenta = '#9d79d6'
+dark-magenta = '#4a2881'
+white = '#ffffff'
+light-yellow = '#e0d81f'
