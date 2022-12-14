@@ -6,11 +6,13 @@ $directory\
 [ ](fg:light-green bg:dark-magenta)\
 $git_branch\ 
 $git_status\
-[ ](fg:dark-magenta bg:dark-blue)\
+[ ](fg:dark-magenta bg:light-blue)\
 $docker_context\
-[ ](fg:dark-blue bg:light-yellow)\
+[ ](fg:light-blue bg:light-yellow)\
 $python\
-[ ](fg:light-yellow)\
+[ ](fg:light-yellow bg:red)\
+$nodejs\
+[ ](fg:red)\
 $time 
 $character
 """
@@ -25,13 +27,13 @@ truncation_symbol = "…/"
 
 [docker_context]
 symbol = " "
-style = 'bg:dark-blue'
-format = '[via $symbol$context ]($style)'
+style = 'bg:light-blue fg:bold dark-blue'
+format = '[$symbol$context ]($style)'
 
 [git_branch]
-style = 'bg:dark-magenta fg:bold light-magenta'
+style = 'bg:dark-magenta fg:bold white'
 symbol = " "
-format = '[on $symbol$branch(:$remote_branch) ]($style)'
+format = '[$symbol$branch(:$remote_branch) ]($style)'
 
 [git_status]
 style = 'bg:dark-magenta'
@@ -44,6 +46,8 @@ symbol = " "
 symbol = " "
 
 [nodejs]
+style = 'bg:red fg:bold white'
+format = '[$symbol($version )]($style)'
 symbol = " "
 
 [python]
@@ -60,6 +64,7 @@ dark-grey = '#222222'
 dark-blue = '#29394f'
 light-blue = '#719cd6'
 light-green = '#81b29a'
+red = '#c94f6d'
 black = '#000000'
 light-magenta = '#cdbbea'
 magenta = '#9d79d6'
