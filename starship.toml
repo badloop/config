@@ -12,9 +12,9 @@ $docker_context\
 $python\
 [\ueb70 ](fg:light-yellow bg:red)\
 $nodejs\
-[\ueb70 ](fg:red bg:light-gray)\
+[\ueb70 ](fg:red bg:dark-grey)\
 $golang\
-[\ueb70 ](fg:light-gray)\
+[\ueb70 ](fg:dark-grey)\
 $lua\
 $time 
 $character
@@ -47,7 +47,7 @@ style = 'bg:dark-magenta'
 format = '([\[$all_status$ahead_behind\] ]($style))'
 
 [golang]
-style = "fg:bold black bg:light-gray"
+style = "fg:bold white bg:dark-grey"
 symbol = " "
 format = '[$symbol($version) ]($style)'
 
@@ -69,7 +69,7 @@ symbol = " "
 
 ## Custom palettes
 [palettes.nightfox]
-dark-grey = '#222222'
+dark-grey = '#333333'
 dark-blue = '#29394f'
 light-blue = '#719cd6'
 light-green = '#81b29a'
@@ -80,4 +80,4 @@ magenta = '#9d79d6'
 dark-magenta = '#4a2881'
 white = '#ffffff'
 light-yellow = '#e0d81f'
-light-gray = '#CCCCCC'
+light-grey = '#CCCCCC'
