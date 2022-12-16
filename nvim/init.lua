@@ -22,4 +22,6 @@ end
 
 vim.o.title = true
 vim.o.titlestring = "%{hostname()}: %{substitute(getcwd(), $HOME, '~', '')}"
+vim.o.foldenable = true
+vim.o.foldmethod = 'indent'
 

@@ -29,7 +29,7 @@ local config = {
 
     -- Set colorscheme to use
     -- colorscheme = "astro",
-    colorscheme = "nightfox",
+    colorscheme = "ayu",
 
     -- Add highlight groups in any theme
     highlights = {
@@ -53,14 +53,6 @@ local config = {
     -- end,
 
     -- Set dashboard header
-    h_nvim = {
-        "███    ██ ██    ██ ██ ███    ███",
-        "████   ██ ██    ██ ██ ████  ████",
-        "██ ██  ██ ██    ██ ██ ██ ████ ██",
-        "██  ██ ██  ██  ██  ██ ██  ██  ██",
-        "██   ████   ████   ██ ██      ██",
-    },
-
     header = {
         "███████╗██╗  ██╗ █████╗ ██╗     ██╗         ██╗    ██╗███████╗    ██████╗ ██╗      █████╗ ██╗   ██╗     █████╗      ██████╗  █████╗ ███╗   ███╗███████╗██████╗", 
         "██╔════╝██║  ██║██╔══██╗██║     ██║         ██║    ██║██╔════╝    ██╔══██╗██║     ██╔══██╗╚██╗ ██╔╝    ██╔══██╗    ██╔════╝ ██╔══██╗████╗ ████║██╔════╝╚════██╗",
@@ -70,95 +62,6 @@ local config = {
         "╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝╚══════╝     ╚══╝╚══╝ ╚══════╝    ╚═╝     ╚══════╝╚═╝  ╚═╝   ╚═╝       ╚═╝  ╚═╝     ╚═════╝ ╚═╝  ╚═╝╚═╝     ╚═╝╚══════╝  ╚═╝  ", 
     },
 
-    -- Default theme configuration
-    ayu = {
-        -- Modify the color palette for the ayu-dark theme
-        colors = {
-            fg = "#abb2bf",
-            bg = "#1e222a",
-        },
-        highlights = function(hl) -- or a function that returns a new table of colors to set
-            local C = require "ayu-dark.colors"
-
-            hl.Normal = { fg = C.fg, bg = C.bg }
-
-            -- New approach instead of diagnostic_style
-            hl.DiagnosticError.italic = true
-            hl.DiagnosticHint.italic = true
-            hl.DiagnosticInfo.italic = true
-            hl.DiagnosticWarn.italic = true
-
-            return hl
-        end,
-        -- enable or disable highlighting for extra plugins
-        plugins = {
-            aerial = true,
-            beacon = false,
-            bufferline = true,
-            cmp = true,
-            dashboard = true,
-            highlighturl = true,
-            hop = false,
-            indent_blankline = true,
-            lightspeed = false,
-            ["neo-tree"] = true,
-            notify = true,
-            ["nvim-tree"] = false,
-            ["nvim-web-devicons"] = true,
-            rainbow = true,
-            symbols_outline = false,
-            telescope = true,
-            treesitter = true,
-            vimwiki = false,
-            ["which-key"] = true,
-        },
-    },
-
-    -- AstroNvim theme configuration
-    astro = {
-        -- Modify the color palette for the astronvim theme
-        colors = {
-            fg = "#abb2bf",
-            bg = "#1e222a",
-        },
-        highlights = function(hl) -- or a function that returns a new table of colors to set
-            local C = require "astro.colors"
-
-            hl.Normal = { fg = C.fg, bg = C.bg }
-
-            -- New approach instead of diagnostic_style
-            hl.DiagnosticError.italic = true
-            hl.DiagnosticHint.italic = true
-            hl.DiagnosticInfo.italic = true
-            hl.DiagnosticWarn.italic = true
-
-            return hl
-        end,
-        -- enable or disable highlighting for extra plugins
-        plugins = {
-            aerial = true,
-            beacon = false,
-            bufferline = true,
-            cmp = true,
-            dashboard = true,
-            highlighturl = true,
-            hop = false,
-            indent_blankline = true,
-            lightspeed = false,
-            ["neo-tree"] = true,
-            notify = true,
-            ["nvim-tree"] = false,
-            ["nvim-web-devicons"] = true,
-            rainbow = true,
-            symbols_outline = false,
-            telescope = true,
-            treesitter = true,
-            vimwiki = false,
-            ["which-key"] = true,
-        },
-    },
-
-    -- Diagnostics configuration (for vim.diagnostics.config({...})) when diagnostics are on
     diagnostics = {
         virtual_text = true,
         underline = true,
@@ -166,44 +69,12 @@ local config = {
 
     -- Extend LSP configuration
     lsp = {
-        -- enable servers that you already have installed without mason
-        servers = {
-            -- "pyright"
-        },
         formatting = {
-            -- control auto formatting on save
             format_on_save = {
                 enabled = true, -- enable or disable format on save globally
-                allow_filetypes = { -- enable format on save for specified filetypes only
-                    -- "go",
-                },
-                ignore_filetypes = { -- disable format on save for specified filetypes
-                    -- "python",
-                },
-            },
-            disabled = { -- disable formatting capabilities for the listed language servers
-                -- "sumneko_lua",
             },
             timeout_ms = 1000, -- default format timeout
-            -- filter = function(client) -- fully override the default formatting function
-            --   return true
-            -- end
         },
-        -- easily add or disable built in mappings added during LSP attaching
-        mappings = {
-            n = {
-                -- ["<leader>lf"] = false -- disable formatting keymap
-            },
-        },
-        -- add to the global LSP on_attach function
-        -- on_attach = function(client, bufnr)
-        -- end,
-
-        -- override the mason server-registration function
-        -- server_registration = function(server, opts)
-        --   require("lspconfig")[server].setup(opts)
-        -- end,
-
         -- Add overrides for LSP server settings, the keys are the name of the server
         ["server-settings"] = {
             pyright = {
@@ -211,19 +82,6 @@ local config = {
               venv = "venv",
               verboseOutput = true
             }
-            
-            -- example for addings schemas to yamlls
-            -- yamlls = { -- override table for require("lspconfig").yamlls.setup({...})
-            --   settings = {
-            --     yaml = {
-            --       schemas = {
-            --         ["http://json.schemastore.org/github-workflow"] = ".github/workflows/*.{yml,yaml}",
-            --         ["http://json.schemastore.org/github-action"] = ".github/action.{yml,yaml}",
-            --         ["http://json.schemastore.org/ansible-stable-2.9"] = "roles/tasks/*.{yml,yaml}",
-            --       },
-            --     },
-            --   },
-            -- },
         },
     },
 
@@ -237,6 +95,8 @@ local config = {
         n = {
             -- second key is the lefthand side of the map
             -- mappings seen under group name "Buffer"
+            ["<leader>|"] = {"<cmd>vsplit<cr>", desc = "Split Vertical"},
+            ["<leader>-"] = {"<cmd>split<cr>", desc = "Split Horizontal"},
             ["<leader>bb"] = { "<cmd>tabnew<cr>", desc = "New tab" },
             ["<leader>bc"] = { "<cmd>BufferLinePickClose<cr>", desc = "Pick to close" },
             ["<leader>bj"] = { "<cmd>BufferLinePick<cr>", desc = "Pick to jump" },
@@ -253,27 +113,6 @@ local config = {
     -- Configure plugins
     plugins = {
         init = {
-            -- You can disable default plugins as follows:
-            -- ["goolord/alpha-nvim"] = { disable = true },
-
-            -- You can also add new plugins here as well:
-            -- Add plugins, the packer syntax without the "use"
-            -- { "andweeb/presence.nvim" },
-            -- {
-            --   "ray-x/lsp_signature.nvim",
-            --   event = "BufRead",
-            --   config = function()
-            --     require("lsp_signature").setup()
-            --   end,
-            -- },
-
-            -- We also support a key value style plugin definition similar to NvChad:
-            -- ["ray-x/lsp_signature.nvim"] = {
-            --   event = "BufRead",
-            --   config = function()
-            --     require("lsp_signature").setup()
-            --   end,
-            -- },
             {
                 "shatur/neovim-ayu",
                 as = "ayu",
@@ -291,16 +130,8 @@ local config = {
         },
         -- All other entries override the require("<key>").setup({...}) call for default plugins
         ["null-ls"] = {
-            -- ["null-ls"] = function(config) -- overrides `require("null-ls").setup(config)`
-            -- config variable is the default configuration table for the setup function call
-            -- local null_ls = require "null-ls"
-            -- Check supported formatters and linters
-            -- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/formatting
-            -- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/diagnostics
             sources = {
-                -- Set a formatter
-                -- null_ls.builtins.formatting.stylua,
-                -- null_ls.builtins.formatting.prettier,
+                require("null-ls").builtins.formatting.prettier,
                 -- null_ls.builtins.diagnostics.pylint.with({
                     -- diagnostics_postprocess = function(diagnostic)
                         -- diagnostic.code = diagnostic.message_id
@@ -311,7 +142,7 @@ local config = {
                 }),
                 -- require("null-ls").builtins.diagnostics.pylint,
                 require("null-ls").builtins.formatting.isort,
-                require("null-ls").builtins.formatting.autopep8,
+                require("null-ls").builtins.formatting.black,
                 require("null-ls").builtins.diagnostics.protolint
             }
             -- return config -- return final config table
