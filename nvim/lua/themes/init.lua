@@ -1,6 +1,7 @@
-local Themes = {}
-function Themes.load(use)
+local M = {}
+function M.load(use)
     use 'folke/tokyonight.nvim'
     use { "catppuccin/nvim", as = "catppuccin" }
 end
-return Themes
+vim.api.nvim_command [[colorscheme tokyonight-moon]]
+return M

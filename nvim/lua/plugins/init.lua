@@ -3,7 +3,7 @@ return require('packer').startup({function(use)
 
     require('core').load(use)
     require('lsp').load(use)
-    require("themes").load(use)
+    require('themes').load(use)
 end,
 config = require('plugins.packer')
 })

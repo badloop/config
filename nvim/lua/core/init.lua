@@ -1,11 +1,12 @@
-local Core = {}
-function Core.load(use)
+local M = {}
+function M.load(use)
     use {
-        "nvim-neo-tree/neo-tree.nvim",
-        branch = "v2.x",
+        'nvim-neo-tree/neo-tree.nvim',
+        branch = 'v2.x',
         requires = {
-            "nvim-lua/plenary.nvim",
-            "MunifTanjim/nui.nvim",
+            'nvim-lua/plenary.nvim',
+            'nvim-tree/nvim-web-devicons',
+            'MunifTanjim/nui.nvim',
         }
     }
     use {
@@ -13,7 +14,14 @@ function Core.load(use)
         requires = { 'kyazdani42/nvim-web-devicons', opt = true }
     }
     use 'nvim-treesitter/nvim-treesitter'
+    use 'L3MON4D3/LuaSnip'
+    use 'hrsh7th/nvim-cmp'
+    use 'hrsh7th/cmp-nvim-lsp'
+    use 'lukas-reineke/indent-blankline.nvim'
 end
 
-require("core.neo-tree")
-return Core
+require('core.treesitter')
+require('core.neo-tree')
+require('core.lualine')
+require('core.cmp')
+return M
