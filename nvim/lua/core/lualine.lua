@@ -13,7 +13,7 @@ require('lualine').setup {
             },
         },
         lualine_x = { 'tabs' },
-        lualine_y = { 'progress' },
+        lualine_y = { 'location' },
         lualine_z = {
             { 'diagnostics',
                 sources = { 'nvim_diagnostic', 'nvim_lsp' },
@@ -26,7 +26,7 @@ require('lualine').setup {
                     hint  = 'DiagnosticHint', -- Changes diagnostics' hint color.
                 },
                 symbols = { error = 'E', warn = 'W', info = 'I', hint = 'H' },
-                colored = true, -- Displays diagnostics status in color if set to true.
+
                 update_in_insert = false, -- Update diagnostics in insert mode.
                 always_visible = false, -- Show diagnostics even if there are none.
             }

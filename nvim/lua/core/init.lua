@@ -1,11 +1,13 @@
 local M = {}
 function M.load(use)
     use {
-        'nvim-tree/nvim-tree.lua',
+        'nvim-neo-tree/neo-tree.nvim',
+        branch = "v2.x",
         requires = {
-            'nvim-tree/nvim-web-devicons', -- optional, for file icons
-        },
-        tag = 'nightly' -- optional, updated every week. (see issue #1193)
+            "nvim-lua/plenary.nvim",
+            "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+            "MunifTanjim/nui.nvim",
+        }
     }
     use {
         'nvim-lualine/lualine.nvim',
@@ -24,11 +26,17 @@ function M.load(use)
     }
     use 'akinsho/bufferline.nvim'
     use 'tpope/vim-fugitive'
+    use 'folke/zen-mode.nvim'
+    use 'lewis6991/gitsigns.nvim'
+    use 'numToStr/Comment.nvim'
 end
 
 require('core.treesitter')
-require('core.nvim-tree')
+require('core.neo-tree')
 require('core.lualine')
 require('core.cmp')
 require('core.bufferline')
+require('core.fugitive')
+require('core.zen-mode')
+require('core.gitsigns')
 return M
