@@ -1,13 +1,11 @@
 local M = {}
 function M.load(use)
     use {
-        'nvim-neo-tree/neo-tree.nvim',
-        branch = 'v2.x',
+        'nvim-tree/nvim-tree.lua',
         requires = {
-            'nvim-lua/plenary.nvim',
-            'nvim-tree/nvim-web-devicons',
-            'MunifTanjim/nui.nvim',
-        }
+            'nvim-tree/nvim-web-devicons', -- optional, for file icons
+        },
+        tag = 'nightly' -- optional, updated every week. (see issue #1193)
     }
     use {
         'nvim-lualine/lualine.nvim',
@@ -18,10 +16,19 @@ function M.load(use)
     use 'hrsh7th/nvim-cmp'
     use 'hrsh7th/cmp-nvim-lsp'
     use 'lukas-reineke/indent-blankline.nvim'
+    use {
+        'nvim-telescope/telescope.nvim', tag = '0.1.0',
+        requires = {
+            { 'nvim-lua/plenary.nvim' }
+        }
+    }
+    use 'akinsho/bufferline.nvim'
+    use 'tpope/vim-fugitive'
 end
 
 require('core.treesitter')
-require('core.neo-tree')
+require('core.nvim-tree')
 require('core.lualine')
 require('core.cmp')
+require('core.bufferline')
 return M
