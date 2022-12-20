@@ -1,6 +1,16 @@
 local o = vim.opt
 local g = vim.g
 
+-- User Functions
+local function map(mode, bind, command, opts)
+    local options = { noremap = true }
+    if opts then
+        options = vim.tbl_extend("force", options, opts)
+    end
+    vim.api.nvim_set_keymap(mode, bind, command, opts)
+end
+
+-- Options
 g.mapleader = ' '
 g.loaded_netrw = 1
 g.loaded_netrwPlugin = 1
@@ -16,39 +26,47 @@ o.smartindent = true
 o.termguicolors = true
 o.background = 'dark'
 o.hidden = true
+o.foldmethod = 'expr'
+o.foldexpr = 'nvim_treesitter#foldexpr()'
+o.foldenable = false
 
+-- Key Maps
 -- Core
-vim.keymap.set('n', '<leader>w', '<cmd>w<cr>', {})
-vim.keymap.set('n', '<leader>q', '<cmd>q<cr>', {})
-vim.keymap.set('n', '<leader>c', '<cmd>bdelete<cr>', {})
-vim.keymap.set('n', '<leader>C', '<cmd>bdelete!<cr>', {})
+map('n', '<leader>w', '<cmd>w<cr>', {})
+map('n', '<leader>q', '<cmd>q<cr>', {})
+map('n', '<leader>c', '<cmd>bdelete<cr>', {})
+map('n', '<leader>C', '<cmd>bdelete!<cr>', {})
+vim.api.nvim_create_user_command("LspRename", function() vim.lsp.buf.rename() end, {})
+map('n', '<leader>lr', '<cmd>LspRename<cr>', {})
+
+-- Zen mode
+map('n', '<leader>Z', '<cmd>ZenMode<cr>', {})
 
 -- NeoTree
-vim.keymap.set('n', '<leader>e', '<cmd>Neotree toggle<cr>')
-vim.keymap.set('n', '<leader>gs', '<cmd>Neotree float git_status<cr>', {})
+map('n', '<leader>e', '<cmd>Neotree toggle<cr>', {})
+map('n', '<leader>gs', '<cmd>Neotree float git_status<cr>', {})
 
 -- Cursor movement
-vim.keymap.set('n', '<C-h>', '<C-w>h', {})
-vim.keymap.set('n', '<C-l>', '<C-w>l', {})
-vim.keymap.set('n', '<C-j>', '<C-w>j', {})
-vim.keymap.set('n', '<C-k>', '<C-w>k', {})
+map('n', '<C-h>', '<C-w>h', {})
+map('n', '<C-l>', '<C-w>l', {})
+map('n', '<C-j>', '<C-w>j', {})
+map('n', '<C-k>', '<C-w>k', {})
 
 -- Bufferline
-vim.keymap.set('n', '<leader>bj', '<cmd>BufferLinePick<cr>', {})
+map('n', '<leader>bj', '<cmd>BufferLinePick<cr>', {})
 
 -- Telescope
-local builtin = require('telescope.builtin')
-vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
-vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
-vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
-vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
-vim.keymap.set('n', '<leader>gc', builtin.git_bcommits, {})
+map('n', '<leader>ff', '<cmd>Telescope find_files<cr>', {})
+map('n', '<leader>fg', '<cmd>Telescope live_grep<cr>', {})
+map('n', '<leader>fb', '<cmd>Telescope buffers<cr>', {})
+map('n', '<leader>fh', '<cmd>Telescope help_tags<cr>', {})
+map('n', '<leader>gc', '<cmd>Telescope git_bcommits<cr>', {})
 
 -- Fugitive (Git)
-vim.keymap.set('n', '<leader>gd', '<cmd>Gdiffsplit<cr>', {})
-vim.keymap.set('n', '<leader>ga', '<cmd>G add .<cr>', {})
-vim.keymap.set('n', '<leader>gc', '<cmd>G commit<cr>', {})
-vim.keymap.set('n', '<leader>gp', '<cmd>G push<cr>', {})
+map('n', '<leader>gd', '<cmd>Gdiffsplit<cr>', {})
+map('n', '<leader>ga', '<cmd>G add .<cr>', {})
+map('n', '<leader>gc', '<cmd>G commit<cr>', {})
+map('n', '<leader>gp', '<cmd>G push<cr>', {})
 
 -- Format on save
 vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.formatting_sync()]]

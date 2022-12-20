@@ -1,6 +1,6 @@
 local packer = require('packer')
 
-packer.startup({function(use)
+packer.startup({ function(use)
     use 'wbthomason/packer.nvim'
 
     require('core').load(use)
@@ -10,4 +10,3 @@ end,
 })
 packer.config = require('plugins.packer-config')
 return packer
-

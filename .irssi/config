@@ -1,0 +1,16 @@
+servers = {
+  address = "irc.libera.chat";
+  port = "7000";
+  use_ssl = "yes";
+  autoconnect = "yes";
+  chatnet = "LiberaChat";
+};
+settings = {
+  core = { 
+    real_name = "badloop";
+    user_name = "badloop";
+    nick = "badloop";
+  };
+  "fe-text" = { actlist_sort = "refnum"; };
+};
+hilights = ( { text = "badloop"; nick = "yes"; word = "yes"; } );
