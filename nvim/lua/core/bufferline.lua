@@ -8,7 +8,7 @@ require("bufferline").setup {
         },
         offsets = {
             {
-                filetype = "NvimTree",
+                filetype = "neo-tree",
                 text = "File Explorer",
                 separator = true,
                 padding = 1

@@ -12,7 +12,7 @@ require('lualine').setup {
                 file_status = true,
             },
         },
-        lualine_x = { 'tabs' },
+        lualine_x = { 'filetype', 'encoding', 'tabs' },
         lualine_y = { 'location' },
         lualine_z = {
             { 'diagnostics',

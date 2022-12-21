@@ -16,6 +16,7 @@ function M.load(use)
     use 'nvim-treesitter/nvim-treesitter'
     use 'L3MON4D3/LuaSnip'
     use 'hrsh7th/nvim-cmp'
+    use 'hrsh7th/cmp-buffer'
     use 'hrsh7th/cmp-nvim-lsp'
     use 'lukas-reineke/indent-blankline.nvim'
     use {

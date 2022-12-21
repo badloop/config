@@ -36,8 +36,13 @@ map('n', '<leader>w', '<cmd>w<cr>', {})
 map('n', '<leader>q', '<cmd>q<cr>', {})
 map('n', '<leader>c', '<cmd>bdelete<cr>', {})
 map('n', '<leader>C', '<cmd>bdelete!<cr>', {})
-vim.api.nvim_create_user_command("LspRename", function() vim.lsp.buf.rename() end, {})
-map('n', '<leader>lr', '<cmd>LspRename<cr>', {})
+map('n', '<leader>lr', '<cmd>lua vim.lsp.buf.rename()<cr>', {}) -- Variable rename
+map('n', '<leader>|', '<C-w>v', {}) -- Vertical buffer split
+map('n', '<leader>-', '<C-w>s', {}) -- Horizontal buffer split
+
+-- Comment
+map('n', '<leader>/', '<cmd>lua require("Comment.api").toggle.linewise.current()<cr>', {})
+map('v', '<leader>/', '<esc><cmd>lua require("Comment.api").toggle.linewise(vim.fn.visualmode())<cr>', {})
 
 -- Zen mode
 map('n', '<leader>Z', '<cmd>ZenMode<cr>', {})
