@@ -40,6 +40,9 @@ map('n', '<leader>lr', '<cmd>lua vim.lsp.buf.rename()<cr>', {}) -- Variable rena
 map('n', '<leader>|', '<C-w>v', {}) -- Vertical buffer split
 map('n', '<leader>-', '<C-w>s', {}) -- Horizontal buffer split
 
+-- Packer
+map('n', '<leader>ps', '<cmd>PackerSync<cr>', {})
+
 -- Comment
 map('n', '<leader>/', '<cmd>lua require("Comment.api").toggle.linewise.current()<cr>', {})
 map('v', '<leader>/', '<esc><cmd>lua require("Comment.api").toggle.linewise(vim.fn.visualmode())<cr>', {})

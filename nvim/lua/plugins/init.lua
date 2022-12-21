@@ -5,8 +5,13 @@ packer.startup({ function(use)
 
     require('core').load(use)
     require('lsp').load(use)
+    require('dap').load(use)
     require('themes').load(use)
 end,
+    config = {
+        display = {
+            open_fn = require('packer.util').float,
+        }
+    }
 })
-packer.config = require('plugins.packer-config')
 return packer
