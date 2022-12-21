@@ -5,6 +5,7 @@ local g = vim.g
 g.mapleader = ' '
 g.loaded_netrw = 1
 g.loaded_netrwPlugin = 1
+g.loaded_perl_provider = 0
 
 o.tabstop = 4
 o.shiftwidth = 4
@@ -20,3 +21,4 @@ o.hidden = true
 o.foldmethod = 'expr'
 o.foldexpr = 'nvim_treesitter#foldexpr()'
 o.foldenable = false
+o.signcolumn = 'yes'

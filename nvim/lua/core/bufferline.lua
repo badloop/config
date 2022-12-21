@@ -2,7 +2,6 @@ require("bufferline").setup {
     options = {
         buffer_close_icon = '',
         mode = 'buffers',
-        --        separator_style = 'slant',
         indicator = {
             style = 'underline',
         },

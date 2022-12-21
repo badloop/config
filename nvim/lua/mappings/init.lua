@@ -1,6 +1,3 @@
-local o = vim.opt
-local g = vim.g
-
 -- User Functions
 local function map(mode, bind, command, opts)
     local options = { noremap = true }
@@ -9,26 +6,6 @@ local function map(mode, bind, command, opts)
     end
     vim.api.nvim_set_keymap(mode, bind, command, opts)
 end
-
--- Options
-g.mapleader = ' '
-g.loaded_netrw = 1
-g.loaded_netrwPlugin = 1
-
-o.tabstop = 4
-o.shiftwidth = 4
-o.expandtab = true
-o.number = true
-o.relativenumber = true
-o.cursorline = true
-o.autoindent = true
-o.smartindent = true
-o.termguicolors = true
-o.background = 'dark'
-o.hidden = true
-o.foldmethod = 'expr'
-o.foldexpr = 'nvim_treesitter#foldexpr()'
-o.foldenable = false
 
 -- Key Maps
 -- Core
