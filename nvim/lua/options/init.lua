@@ -22,3 +22,4 @@ o.foldmethod = 'expr'
 o.foldexpr = 'nvim_treesitter#foldexpr()'
 o.foldenable = false
 o.signcolumn = 'yes'
+o.laststatus = 3

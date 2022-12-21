@@ -17,6 +17,9 @@ map('n', '<leader>lr', '<cmd>lua vim.lsp.buf.rename()<cr>', {}) -- Variable rena
 map('n', '<leader>|', '<C-w>v', {}) -- Vertical buffer split
 map('n', '<leader>-', '<C-w>s', {}) -- Horizontal buffer split
 
+-- DAP
+map('n', '<leader>db', '<cmd>lua require("dap").toggle_breakpoint()<cr>', {})
+
 -- Packer
 map('n', '<leader>ps', '<cmd>PackerSync<cr>', {})
 
