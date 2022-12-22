@@ -30,6 +30,8 @@ function M.load(use)
     use 'folke/zen-mode.nvim'
     use 'lewis6991/gitsigns.nvim'
     use 'numToStr/Comment.nvim'
+    use 'windwp/nvim-autopairs'
+
 end
 
 require('core.treesitter')
@@ -40,4 +42,5 @@ require('core.bufferline')
 require('core.fugitive')
 require('core.zen-mode')
 require('core.gitsigns')
+require('core.luasnip')
 return M
