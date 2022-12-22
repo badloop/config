@@ -14,9 +14,13 @@ map('n', '<leader>q', '<cmd>q<cr>', {})
 map('n', '<leader>Q', '<cmd>qall<cr>', {})
 map('n', '<leader>c', '<cmd>bdelete<cr>', {})
 map('n', '<leader>C', '<cmd>bdelete!<cr>', {})
-map('n', '<leader>lr', '<cmd>lua vim.lsp.buf.rename()<cr>', {}) -- Variable rename
 map('n', '<leader>|', '<C-w>v', {}) -- Vertical buffer split
 map('n', '<leader>-', '<C-w>s', {}) -- Horizontal buffer split
+
+-- LSP
+map('n', '<leader>lr', '<cmd>lua vim.lsp.buf.rename()<cr>', {}) -- Variable rename
+map('n', '<leader>lR', '<cmd>lua vim.lsp.buf.references()<cr>', {}) -- Variable rename
+map('n', '<S-k>', '<cmd>lua vim.lsp.buf.hover()<cr>', {}) -- Variable rename
 
 -- DAP
 map('n', '<leader>db', '<cmd>lua require("dap").toggle_breakpoint()<cr>', {})
@@ -56,9 +60,8 @@ map('n', '<leader>bj', '<cmd>BufferLinePick<cr>', {})
 -- Telescope
 map('n', '<leader>ff', '<cmd>Telescope find_files<cr>', {})
 map('n', '<leader>fg', '<cmd>Telescope live_grep<cr>', {})
-map('n', '<leader>fb', '<cmd>Telescope buffers<cr>', {})
 map('n', '<leader>fh', '<cmd>Telescope help_tags<cr>', {})
-map('n', '<leader>gc', '<cmd>Telescope git_bcommits<cr>', {})
+map('n', '<leader>fk', '<cmd>Telescope keymaps<cr>', {})
 
 -- Fugitive (Git)
 map('n', '<leader>gd', '<cmd>Gdiffsplit<cr>', {})

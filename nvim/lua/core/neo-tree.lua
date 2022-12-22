@@ -5,6 +5,7 @@ require("neo-tree").setup({
     enable_git_status = true,
     enable_diagnostics = true,
     sort_case_insensitive = false,
+    open_on_setup = false,
     default_component_configs = {
         symbols = {
             -- Change type
@@ -19,5 +20,8 @@ require("neo-tree").setup({
             staged    = "",
             conflict  = "",
         }
+    },
+    window = {
+        position = 'float'
     }
 })

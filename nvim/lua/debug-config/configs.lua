@@ -4,8 +4,8 @@ configs.python = {
     {
         type = 'python';
         request = 'launch';
-        name = "Launch current buffer";
-        program = "${file}";
+        name = 'Debug Current File';
+        program = '${file}';
         pythonPath = function()
             local cwd = vim.fn.getcwd()
             if vim.fn.executable(cwd .. '/venv/bin/python') == 1 then
@@ -17,20 +17,19 @@ configs.python = {
             end
         end;
     },
+}
+
+configs.go = {
     {
-        type = 'python';
+        type = 'go';
+        name = 'Debug Current File';
         request = 'launch';
-        name = "Launch current buffer2";
-        program = "${file}";
-        pythonPath = function()
-            local cwd = vim.fn.getcwd()
-            if vim.fn.executable(cwd .. '/venv/bin/python') == 1 then
-                return cwd .. '/venv/bin/python'
-            elseif vim.fn.executable(cwd .. '/.venv/bin/python') == 1 then
-                return cwd .. '/.venv/bin/python'
-            else
-                return '/usr/bin/python'
-            end
-        end;
+        program = '${file}';
+    },
+    {
+        type = 'go';
+        name = 'Attach to Running Process...';
+        request = 'attach';
+        processId = function() require('dap.utils').pick_process(); end
     },
 }
