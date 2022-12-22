@@ -42,5 +42,5 @@ require('core.bufferline')
 require('core.fugitive')
 require('core.zen-mode')
 require('core.gitsigns')
-require('core.luasnip')
+require('core.snip')
 return M

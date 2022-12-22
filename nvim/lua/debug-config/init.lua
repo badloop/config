@@ -4,7 +4,10 @@ function M.load(use)
     use 'rcarriga/nvim-dap-ui'
 end
 
--- require('core.treesitter')
-require('debug-config.dap')
+local dap = require('dap')
+dap.adapters = {}
+dap.configurations = {}
+require('debug-config.adapters')
+require('debug-config.configs')
 require('debug-config.dapui')
 return M

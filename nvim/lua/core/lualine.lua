@@ -5,17 +5,11 @@ require('lualine').setup {
     },
     sections = {
         lualine_a = { 'mode' },
-        lualine_b = { 'branch', 'diff' },
-        lualine_c = {
+        lualine_b = {
             {
-                'filename',
-                path = 2,
-                file_status = true,
+                'branch',
+                icon = { '' },
             },
-        },
-        lualine_x = { 'filetype', 'encoding', 'tabs' },
-        lualine_y = { 'location' },
-        lualine_z = {
             { 'diagnostics',
                 sources = { 'nvim_diagnostic', 'nvim_lsp' },
                 sections = { 'error', 'warn', 'info', 'hint' },
@@ -31,6 +25,17 @@ require('lualine').setup {
                 update_in_insert = false, -- Update diagnostics in insert mode.
                 always_visible = false, -- Show diagnostics even if there are none.
             }
+        },
+        lualine_c = {
+            {
+                'filename',
+                path = 2,
+                file_status = true,
+            },
+        },
+        lualine_x = { 'filetype', 'encoding', 'tabs' },
+        lualine_y = { 'location' },
+        lualine_z = {
         }
     }
 }

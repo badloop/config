@@ -50,6 +50,8 @@ map('n', '<C-k>', '<C-w>k', {})
 
 -- Bufferline
 map('n', '<leader>bj', '<cmd>BufferLinePick<cr>', {})
+-- map('n', '<C-]>', '<cmd>BufferLineCycleNext<cr>', {})
+-- map('n', '<C-[>', '<cmd>BufferLineCyclePrev<cr>', {})
 
 -- Telescope
 map('n', '<leader>ff', '<cmd>Telescope find_files<cr>', {})
