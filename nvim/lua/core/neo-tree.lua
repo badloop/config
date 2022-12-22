@@ -6,6 +6,13 @@ require("neo-tree").setup({
     enable_diagnostics = true,
     sort_case_insensitive = false,
     open_on_setup = false,
+    filesystem = {
+        filtered_items = {
+            hide_dotfiles = false,
+            hide_hiddeen = false,
+            hide_gitignored = false,
+        }
+    },
     default_component_configs = {
         symbols = {
             -- Change type
