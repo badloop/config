@@ -22,11 +22,11 @@ packer.startup({ function(use)
     require('themes').load(use)
     if bootstrap then
         require('packer').sync()
-    else
-        require('core').config()
-        require('lsp').config()
-        require('debug-config').config()
-        vim.cmd("color carbonfox")
+	else
+	    require('core').config()
+	    require('lsp').config()
+	    require('debug-config').config()
+	    vim.cmd("color carbonfox")
     end
 end,
     config = {
