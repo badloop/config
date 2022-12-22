@@ -1,6 +1,11 @@
 local M = {}
 function M.load(use)
-    use 'neovim/nvim-lspconfig'
+	use 'neovim/nvim-lspconfig'
+end
+function M.config()
+	require('lsp.pyright')
+	require('lsp.sumneko_lua')
+	require('lsp.yamlls')
 end
 
 -- Provide helper for updating the default DiagnosticSign representation
@@ -21,7 +26,4 @@ end
 --     set_sign(sign, symbol)
 -- end
 
-require('lsp.pyright')
-require('lsp.sumneko_lua')
-require('lsp.yamlls')
 return M

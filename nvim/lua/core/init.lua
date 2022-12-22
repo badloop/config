@@ -34,15 +34,18 @@ function M.load(use)
     use 'glepnir/dashboard-nvim'
 end
 
-require('core.treesitter')
-require('core.neo-tree')
-require('core.lualine')
-require('core.cmp')
-require('core.bufferline')
-require('core.fugitive')
-require('core.zen-mode')
-require('core.gitsigns')
-require('core.snip')
-require('core.autopairs')
-require('core.dash')
+function M.config()
+    require('core.treesitter')
+    require('core.neo-tree')
+    require('core.lualine')
+    require('core.cmp')
+    require('core.bufferline')
+    require('core.fugitive')
+    require('core.zen-mode')
+    require('core.gitsigns')
+    require('core.snip')
+    require('core.autopairs')
+    require('core.dash')
+end
+
 return M
