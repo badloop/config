@@ -7,6 +7,7 @@ function M.config()
     require('lsp.pyright')
     require('lsp.sumneko_lua')
     require('lsp.yamlls')
+    require('lsp.bashls')
 end
 
 --local lsp = require('lsp')
