@@ -21,6 +21,10 @@ map('n', '<leader>-', '<C-w>s', {}) -- Horizontal buffer split
 map('n', '<leader>db', '<cmd>lua require("dap").toggle_breakpoint()<cr>', {})
 map('n', '<leader>dc', '<cmd>lua require("dap").continue()<cr>', {})
 map('n', '<leader>dd', '<cmd>lua require("dapui").toggle()<cr>', {})
+map('n', '<leader>dv', '<cmd>lua require("dap").step_over()<cr>', {})
+map('n', '<leader>di', '<cmd>lua require("dap").step_into()<cr>', {})
+map('n', '<leader>do', '<cmd>lua require("dap").step_out()<cr>', {})
+
 
 -- Packer
 map('n', '<leader>ps', '<cmd>PackerSync<cr>', {})
