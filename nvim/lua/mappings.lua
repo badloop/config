@@ -11,6 +11,7 @@ end
 -- Core
 map('n', '<leader>w', '<cmd>w<cr>', {})
 map('n', '<leader>q', '<cmd>q<cr>', {})
+map('n', '<leader>Q', '<cmd>qall<cr>', {})
 map('n', '<leader>c', '<cmd>bdelete<cr>', {})
 map('n', '<leader>C', '<cmd>bdelete!<cr>', {})
 map('n', '<leader>lr', '<cmd>lua vim.lsp.buf.rename()<cr>', {}) -- Variable rename
@@ -19,11 +20,12 @@ map('n', '<leader>-', '<C-w>s', {}) -- Horizontal buffer split
 
 -- DAP
 map('n', '<leader>db', '<cmd>lua require("dap").toggle_breakpoint()<cr>', {})
-map('n', '<leader>dc', '<cmd>lua require("dap").continue()<cr>', {})
+map('n', '<leader>ds', '<cmd>lua require("dap").continue()<cr>', {})
 map('n', '<leader>dd', '<cmd>lua require("dapui").toggle()<cr>', {})
 map('n', '<leader>dv', '<cmd>lua require("dap").step_over()<cr>', {})
 map('n', '<leader>di', '<cmd>lua require("dap").step_into()<cr>', {})
 map('n', '<leader>do', '<cmd>lua require("dap").step_out()<cr>', {})
+map('n', '<leader>dc', '<cmd>lua require("dap").close()<cr>', {})
 
 
 -- Packer
