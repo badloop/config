@@ -23,14 +23,14 @@ end
 --     )
 -- end
 --
--- local signs = {}
--- signs['Error'] = 'Q'
--- signs['Info'] = 'P'
--- signs['Warning'] = 'A'
--- signs['Hint'] = 'L'
 
 -- for sign, symbol in pairs(signs) do
 --     set_sign(sign, symbol)
 -- end
+local signs = { Error = " ", Warning = " ", Hint = " ", Information = " " }
+for type, icon in pairs(signs) do
+    local hl = "DiagnosticSign" .. type
+    vim.fn.sign_define(hl, { text = icon, texthl = hl })
+end
 
 return M
