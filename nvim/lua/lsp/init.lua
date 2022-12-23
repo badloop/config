@@ -8,6 +8,7 @@ function M.config()
     require('lsp.sumneko_lua')
     require('lsp.yamlls')
     require('lsp.bashls')
+    require('lsp.html')
 end
 
 --local lsp = require('lsp')
