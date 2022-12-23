@@ -33,16 +33,6 @@ function M.load(use)
     use 'windwp/nvim-autopairs'
     use 'glepnir/dashboard-nvim'
     use 'petertriho/nvim-scrollbar'
-    use {
-        'wiliamks/nice-reference.nvim',
-        requires = {
-            'kyazdani42/nvim-web-devicons',
-            {
-                'rmagatti/goto-preview',
-                config = function() require('goto-preview').setup {} end
-            }
-        }
-    }
 end
 
 function M.config()
