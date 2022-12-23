@@ -5,11 +5,13 @@ function M.load(use)
 end
 
 function M.config()
-	local dap = require('dap')
-	dap.adapters = {}
-	dap.configurations = {}
-	require('debug-config.adapters')
-	require('debug-config.configs')
-	require('debug-config.dapui')
+    local dap = require('dap')
+    dap.adapters = {}
+    dap.configurations = {}
+    require('debug-config.adapters')
+    require('debug-config.configs')
+    require('debug-config.dapui')
+    vim.fn.sign_define('DapBreakpoint', { text = '', texthl = 'Error' })
 end
+
 return M
