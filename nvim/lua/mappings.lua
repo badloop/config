@@ -21,6 +21,7 @@ map('n', '<leader>-', '<C-w>s', {}) -- Horizontal buffer split
 map('n', '<leader>lr', '<cmd>lua vim.lsp.buf.rename()<cr>', {}) -- Variable rename
 map('n', '<leader>lR', '<cmd>lua vim.lsp.buf.references()<cr>', {}) -- Variable rename
 map('n', '<S-k>', '<cmd>lua vim.lsp.buf.hover()<cr>', {}) -- Variable rename
+map('n', '<leader>gD', 'vim.lsp.buf.declaration', {})
 
 -- DAP
 map('n', '<leader>db', '<cmd>lua require("dap").toggle_breakpoint()<cr>', {})
