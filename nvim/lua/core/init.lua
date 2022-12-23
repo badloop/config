@@ -32,6 +32,7 @@ function M.load(use)
     use 'numToStr/Comment.nvim'
     use 'windwp/nvim-autopairs'
     use 'glepnir/dashboard-nvim'
+    use 'petertriho/nvim-scrollbar'
 end
 
 function M.config()
@@ -46,6 +47,7 @@ function M.config()
     require('core.snip')
     require('core.autopairs')
     require('core.dash')
+    require('core.scrollbar')
 end
 
 return M
