@@ -24,9 +24,6 @@ end
 -- end
 --
 
--- for sign, symbol in pairs(signs) do
---     set_sign(sign, symbol)
--- end
 local signs = { Error = " ", Warning = " ", Hint = " ", Information = " " }
 for type, icon in pairs(signs) do
     local hl = "DiagnosticSign" .. type
