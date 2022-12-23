@@ -19,7 +19,6 @@ map('n', '<leader>-', '<C-w>s', {}) -- Horizontal buffer split
 
 -- LSP
 map('n', '<leader>lr', '<cmd>lua vim.lsp.buf.rename()<cr>', {}) -- Variable rename
--- map('n', '<leader>lR', '<cmd>NiceReference<cr>', {}) -- Variable rename
 map('n', '<leader>lR', '<cmd>lua require("telescope.builtin").lsp_references()<cr>', {}) -- Variable rename
 map('n', '<S-k>', '<cmd>lua vim.lsp.buf.hover()<cr>', {}) -- Variable rename
 map('n', '<leader>gD', '<cmd> lua vim.lsp.buf.declaration()<cr>', {})
@@ -64,12 +63,11 @@ map('n', '<leader>ff', '<cmd>Telescope find_files<cr>', {})
 map('n', '<leader>fg', '<cmd>Telescope live_grep<cr>', {})
 map('n', '<leader>fh', '<cmd>Telescope help_tags<cr>', {})
 map('n', '<leader>fk', '<cmd>Telescope keymaps<cr>', {})
+-- Telescope -- git
+map('n', '<leader>gb', '<cmd>Telescope git_branches<cr>', {})
 
 -- Fugitive (Git)
 map('n', '<leader>gd', '<cmd>Gdiffsplit<cr>', {})
-map('n', '<leader>ga', '<cmd>G add .<cr>', {})
-map('n', '<leader>gc', '<cmd>G commit<cr>', {})
-map('n', '<leader>gp', '<cmd>G push<cr>', {})
 
 -- Format on save
 vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.formatting_sync()]]
