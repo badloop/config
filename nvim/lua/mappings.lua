@@ -22,6 +22,7 @@ map('n', '<leader>lr', '<cmd>lua vim.lsp.buf.rename()<cr>', {}) -- Variable rena
 map('n', '<leader>lR', '<cmd>lua require("telescope.builtin").lsp_references()<cr>', {}) -- Variable rename
 map('n', '<S-k>', '<cmd>lua vim.lsp.buf.hover()<cr>', {}) -- Variable rename
 map('n', '<leader>gD', '<cmd> lua vim.lsp.buf.declaration()<cr>', {})
+map('n', '<leader>ld', '<cmd>lua vim.diagnostic.open_float()<cr>', {})
 
 -- DAP
 map('n', '<leader>db', '<cmd>lua require("dap").toggle_breakpoint()<cr>', {})
@@ -63,6 +64,8 @@ map('n', '<leader>ff', '<cmd>Telescope find_files<cr>', {})
 map('n', '<leader>fg', '<cmd>Telescope live_grep<cr>', {})
 map('n', '<leader>fh', '<cmd>Telescope help_tags<cr>', {})
 map('n', '<leader>fk', '<cmd>Telescope keymaps<cr>', {})
+map('n', '<leader>fd', '<cmd>Telescope diagnostics<cr>', {})
+
 -- Telescope -- git
 map('n', '<leader>gb', '<cmd>Telescope git_branches<cr>', {})
 
