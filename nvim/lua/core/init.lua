@@ -33,7 +33,6 @@ function M.load(use)
     use 'windwp/nvim-autopairs'
     use 'glepnir/dashboard-nvim'
     use 'petertriho/nvim-scrollbar'
-    -- use 'folke/neodev.nvim'
 end
 
 function M.config()
@@ -49,7 +48,6 @@ function M.config()
     require('core.autopairs')
     require('core.dash')
     require('core.scrollbar')
-    -- require('core.neodev')
 end
 
 return M

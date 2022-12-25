@@ -6,12 +6,6 @@ adapters.python = {
     args = { '-m', 'debugpy.adapter' };
 }
 
--- adapters.go = {
---     type = 'executable';
---     command = 'dlv';
---     args = { 'dap', '-l', '127.0.0.1:2345' }
--- }
-
 adapters.go = function(callback)
     local stdout = vim.loop.new_pipe(false)
     local handle

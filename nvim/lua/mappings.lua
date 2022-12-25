@@ -70,4 +70,4 @@ map('n', '<leader>gb', '<cmd>Telescope git_branches<cr>', {})
 map('n', '<leader>gd', '<cmd>Gdiffsplit<cr>', {})
 
 -- Format on save
-vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.formatting_sync()]]
+vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.format()]]
