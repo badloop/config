@@ -16,6 +16,7 @@ map('n', '<leader>c', '<cmd>bdelete<cr>', {})
 map('n', '<leader>C', '<cmd>bdelete!<cr>', {})
 map('n', '<leader>|', '<C-w>v', {}) -- Vertical buffer split
 map('n', '<leader>-', '<C-w>s', {}) -- Horizontal buffer split
+map('n', 'help', 'vert help', {})
 
 -- LSP
 map('n', '<leader>lr', '<cmd>lua vim.lsp.buf.rename()<cr>', {}) -- Variable rename
@@ -74,3 +75,5 @@ map('n', '<leader>gd', '<cmd>Gdiffsplit<cr>', {})
 
 -- Format on save
 vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.format()]]
+
+vim.cmd [[autocmd! FileType help :wincmd L | :vert resize 90]]
