@@ -1,24 +1,38 @@
 format = """
-[ ](bg:dark-grey)\
 [ \uf179 ](bg:dark-grey fg:bold white)\
-[\ueb70 ](fg:dark-grey bg:light-green)\
+[\ueb70 ](fg:dark-grey)\
 $directory\
-[\ueb70 ](fg:light-green bg:dark-magenta)\
 $git_branch\ 
 $git_status\
-[\ueb70 ](fg:dark-magenta bg:light-blue)\
 $docker_context\
-[\ueb70 ](fg:light-blue bg:light-yellow)\
 $python\
-[\ueb70 ](fg:light-yellow bg:red)\
 $nodejs\
-[\ueb70 ](fg:red bg:dark-grey)\
 $golang\
-[\ueb70 ](fg:dark-grey)\
 $lua\
 $time 
 $character
 """
+# format = """
+# [ ](bg:dark-grey)\
+# [ \uf179 ](fg:bold white)\
+# [\ueb70 ](fg:dark-grey bg:light-green)\
+# $directory\
+# [\ueb70 ](fg:light-green bg:dark-magenta)\
+# $git_branch\ 
+# $git_status\
+# [\ueb70 ](fg:dark-magenta bg:light-blue)\
+# $docker_context\
+# [\ueb70 ](fg:light-blue bg:light-yellow)\
+# $python\
+# [\ueb70 ](fg:light-yellow bg:red)\
+# $nodejs\
+# [\ueb70 ](fg:red bg:dark-grey)\
+# $golang\
+# [\ueb70 ](fg:dark-grey)\
+# $lua\
+# $time 
+# $character
+# """
 palette = 'nightfox'
 
 [character]
@@ -27,42 +41,43 @@ error_symbol = '[﬌](fg:bold red)'
 
 [directory]
 read_only = " "
-style = "bg:light-green fg:bold black"
-format = "[ \uf115 $path ]($style)"
+style = "fg:bold white"
+format = "[ $path ]($style)"
 truncation_length = 3
 truncation_symbol = "…/"
 
 [docker_context]
 symbol = " "
-style = 'bg:light-blue fg:bold dark-blue'
+style = 'fg:bold dark-blue'
 format = '[$symbol$context ]($style)'
 
 [git_branch]
-style = 'bg:dark-magenta fg:bold white'
+style = 'fg:bold light-blue'
 symbol = " "
 format = '[$symbol$branch(:$remote_branch) ]($style)'
 
 [git_status]
-style = 'bg:dark-magenta'
 format = '([\[$all_status$ahead_behind\] ]($style))'
 
 [golang]
-style = "fg:bold white bg:dark-grey"
+style = "fg:bold light-green"
 symbol = " "
 format = '[$symbol($version) ]($style)'
 
 [lua]
+style = 'fg:bold light-grey'
 symbol = " "
+format = '[$symbol($version )]($style)'
 
 [nodejs]
-style = 'bg:red fg:bold white'
+style = 'fg:bold white'
 format = '[$symbol($version )]($style)'
 symbol = " "
 
 [python]
 symbol = " "
 format = '[via ${symbol}${pyenv_prefix}(${version} )(\($virtualenv\)) ]($style)'
-style='bg:light-yellow fg:black'
+style='fg:light-yellow'
 
 [rust]
 symbol = " "
