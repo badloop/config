@@ -5,6 +5,7 @@ function M.load(use)
         requires = { 'kyazdani42/nvim-web-devicons', opt = true }
     }
     use 'nvim-treesitter/nvim-treesitter'
+    use 'nvim-treesitter/playground'
     use 'L3MON4D3/LuaSnip'
     use 'hrsh7th/nvim-cmp'
     use 'hrsh7th/cmp-buffer'

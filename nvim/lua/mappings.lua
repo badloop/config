@@ -77,3 +77,6 @@ map('n', '<leader>gd', '<cmd>Gdiffsplit<cr>', {})
 vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.format()]]
 
 vim.cmd [[autocmd! FileType help :wincmd L | :vert resize 90]]
+
+-- Helper stuffs
+map('n', '<leader>nl', 'i<cr><esc>', {})
