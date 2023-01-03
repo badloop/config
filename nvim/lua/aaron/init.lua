@@ -1,7 +1,13 @@
-local embedded_js = vim.treesitter.parse_query(
-    "html",
-    [[
-    ((script_element) @script)
-    ((raw_text) @javascript)
-    ]]
-)
+-- vim.api.nvim_create_augroup('core', { clear = true })
+-- vim.api.nvim_create_autocmd({ 'BufDelete' },
+--     {
+--         pattern = '*',
+--         group = 'core',
+--         callback = function()
+--             print(vim.inspect(vim.fn.getbufinfo()))
+--             if #vim.fn.getbufinfo() == 0 then
+--                 print('Hello world')
+--             end
+--         end
+--     }
+-- )

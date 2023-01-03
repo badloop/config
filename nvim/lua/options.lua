@@ -21,8 +21,9 @@ o.smartindent = true
 o.termguicolors = true
 o.background = 'dark'
 o.hidden = true
-o.foldmethod = 'expr'
-o.foldexpr = 'nvim_treesitter#foldexpr()'
+o.foldmethod = 'indent'
+-- o.foldmethod = 'expr'
+-- o.foldexpr = 'nvim_treesitter#foldexpr()'
 o.foldenable = false
 o.signcolumn = 'yes'
 o.laststatus = 3
@@ -38,12 +39,11 @@ vim.diagnostic.config {
 }
 
 vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(
-  vim.lsp.handlers.hover,
-  {border = 'rounded'}
+    vim.lsp.handlers.hover,
+    { border = 'rounded' }
 )
 
 vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(
-  vim.lsp.handlers.signature_help,
-  {border = 'rounded'}
+    vim.lsp.handlers.signature_help,
+    { border = 'rounded' }
 )
-

@@ -16,7 +16,6 @@ map('n', '<leader>c', '<cmd>bdelete<cr>', {})
 map('n', '<leader>C', '<cmd>bdelete!<cr>', {})
 map('n', '<leader>|', '<C-w>v', {}) -- Vertical buffer split
 map('n', '<leader>-', '<C-w>s', {}) -- Horizontal buffer split
-map('n', 'help', 'vert help', {})
 
 -- LSP
 map('n', '<leader>lr', '<cmd>lua vim.lsp.buf.rename()<cr>', {}) -- Variable rename
@@ -57,8 +56,6 @@ map('n', '<C-k>', '<C-w>k', {})
 
 -- Bufferline
 map('n', '<leader>bj', '<cmd>BufferLinePick<cr>', {})
--- map('n', '<C-]>', '<cmd>BufferLineCycleNext<cr>', {})
--- map('n', '<C-[>', '<cmd>BufferLineCyclePrev<cr>', {})
 
 -- Telescope
 map('n', '<leader>ff', '<cmd>Telescope find_files<cr>', {})
@@ -77,6 +74,3 @@ map('n', '<leader>gd', '<cmd>Gdiffsplit<cr>', {})
 vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.format()]]
 
 vim.cmd [[autocmd! FileType help :wincmd L | :vert resize 90]]
-
--- Helper stuffs
-map('n', '<leader>nl', 'i<cr><esc>', {})
