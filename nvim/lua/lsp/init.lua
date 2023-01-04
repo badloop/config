@@ -10,6 +10,7 @@ function M.config()
     require('lsp.bashls')
     require('lsp.html')
     require('lsp.neodev')
+    require('lsp.go')
 end
 
 local signs = { Error = " ", Warning = " ", Hint = " ", Information = " " }

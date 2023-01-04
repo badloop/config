@@ -21,7 +21,7 @@ map('n', '<leader>-', '<C-w>s', {}) -- Horizontal buffer split
 map('n', '<leader>lr', '<cmd>lua vim.lsp.buf.rename()<cr>', {}) -- Variable rename
 map('n', '<leader>lR', '<cmd>lua require("telescope.builtin").lsp_references()<cr>', {}) -- Variable rename
 map('n', '<S-k>', '<cmd>lua vim.lsp.buf.hover()<cr>', {}) -- Variable rename
-map('n', '<leader>gD', '<cmd> lua vim.lsp.buf.declaration()<cr>', {})
+-- map('n', '<leader>gD', '<cmd> lua vim.lsp.buf.declaration()<cr>', {})
 map('n', '<leader>ld', '<cmd>lua vim.diagnostic.open_float()<cr>', {})
 
 -- DAP
@@ -44,10 +44,6 @@ map('v', '<leader>/', '<esc><cmd>lua require("Comment.api").toggle.linewise(vim.
 -- Zen mode
 map('n', '<leader>Z', '<cmd>ZenMode<cr>', {})
 
--- NeoTree
-map('n', '<leader>e', '<cmd>Neotree toggle<cr>', {})
-map('n', '<leader>gs', '<cmd>Neotree float git_status<cr>', {})
-
 -- Cursor movement
 map('n', '<C-h>', '<C-w>h', {})
 map('n', '<C-l>', '<C-w>l', {})
@@ -68,7 +64,7 @@ map('n', '<leader>fd', '<cmd>Telescope diagnostics<cr>', {})
 map('n', '<leader>gb', '<cmd>Telescope git_branches<cr>', {})
 
 -- Fugitive (Git)
-map('n', '<leader>gd', '<cmd>Gdiffsplit<cr>', {})
+map('n', '<leader>gs', '<cmd>Gdiffsplit<cr>', {})
 
 -- Format on save
 vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.format()]]
