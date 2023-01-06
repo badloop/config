@@ -9,8 +9,8 @@ function M.config()
     dap.adapters = {}
     dap.configurations = {}
     require('debug-config.adapters')
-    require('debug-config.configs')
     require('debug-config.dapui')
+    require('debug-config.configurations')
     vim.fn.sign_define('DapBreakpoint', { text = '', texthl = 'Error' })
 end
 

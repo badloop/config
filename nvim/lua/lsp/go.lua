@@ -1,5 +1,13 @@
 -- gopls
-require('lspconfig').gopls.setup {}
+require('lspconfig').gopls.setup {
+    capabilities = vim.lsp.protocol.make_client_capabilities(),
+    server_capabilities = {
+        declarationProvider = true,
+    },
+    on_attach = function(client, _)
+        vim.pretty_print(client)
+    end,
+}
 
 -- golangci-lint-langserver
 local lspconfig = require 'lspconfig'

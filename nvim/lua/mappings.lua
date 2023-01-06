@@ -21,7 +21,8 @@ map('n', '<leader>-', '<C-w>s', {}) -- Horizontal buffer split
 map('n', '<leader>lr', '<cmd>lua vim.lsp.buf.rename()<cr>', {}) -- Variable rename
 map('n', '<leader>lR', '<cmd>lua require("telescope.builtin").lsp_references()<cr>', {}) -- Variable rename
 map('n', '<S-k>', '<cmd>lua vim.lsp.buf.hover()<cr>', {}) -- Variable rename
--- map('n', '<leader>gD', '<cmd> lua vim.lsp.buf.declaration()<cr>', {})
+map('n', '<leader>gD', '<cmd> lua vim.lsp.buf.declaration()<cr>', {})
+map('n', '<leader>gd', '<cmd> lua vim.lsp.buf.definition()<cr>', {})
 map('n', '<leader>ld', '<cmd>lua vim.diagnostic.open_float()<cr>', {})
 
 -- DAP
@@ -63,10 +64,8 @@ map('n', '<leader>fd', '<cmd>Telescope diagnostics<cr>', {})
 -- Telescope -- git
 map('n', '<leader>gb', '<cmd>Telescope git_branches<cr>', {})
 
--- Fugitive (Git)
+-- Git
 map('n', '<leader>gs', '<cmd>Gdiffsplit<cr>', {})
+map('n', '<leader>gp', '<cmd>Gitsigns preview_hunk<cr>', {})
+map('n', '<leader>gr', '<cmd>Gitsigns reset_hunk<cr>', {})
 
--- Format on save
-vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.format()]]
-
-vim.cmd [[autocmd! FileType help :wincmd L | :vert resize 90]]

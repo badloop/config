@@ -8,7 +8,6 @@ $docker_context\
 $python\
 $nodejs\
 $golang\
-$lua\
 $time 
 $character
 """
@@ -42,8 +41,8 @@ error_symbol = '[﬌](fg:bold red)'
 [directory]
 read_only = " "
 style = "fg:bold white"
-format = "[ $path ]($style)"
-truncation_length = 3
+format = "[$path ]($style)"
+truncation_length = 5
 truncation_symbol = "…/"
 
 [docker_context]
