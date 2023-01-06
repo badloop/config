@@ -42,24 +42,3 @@ cfg.python = {
         end,
     },
 }
-
-require('dap.ext.vscode').load_launchjs()
-
--- local python_project_configs = vim.api.nvim_create_augroup('python_project_configs', { clear = true })
--- vim.api.nvim_create_autocmd({ "VimEnter" }, {
---     callback = function()
---         local f = io.open(vim.fn.getcwd() .. '.vscode/launch.json')
---         if not f then
---             return nil
---         else
---             local data = f:read '*a'
---             f:close()
---             cfg = json.decode(data)
---
---             for config in pairs(cfg) do
---                 cfg.python.append(config)
---             end
---         end
---     end,
---     group = python_project_configs
--- })
