@@ -10,7 +10,6 @@ function M.load(use)
     use 'hrsh7th/nvim-cmp'
     use 'hrsh7th/cmp-buffer'
     use 'hrsh7th/cmp-nvim-lsp'
-    use 'lukas-reineke/indent-blankline.nvim'
     use {
         'nvim-telescope/telescope.nvim', tag = '0.1.0',
         requires = {

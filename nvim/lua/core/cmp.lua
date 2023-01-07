@@ -13,6 +13,16 @@ for _, lsp in ipairs(servers) do
 end
 
 cmp.setup {
+    window = {
+        completion = {
+            border = 'rounded',
+            scrollbar = '║',
+        },
+        documentation = {
+            border = 'rounded',
+            scrollbar = '║',
+        },
+    },
     snippet = {
         expand = function(args)
             luasnip.lsp_expand(args.body)
