@@ -25,6 +25,7 @@ function M.load(use)
     use 'windwp/nvim-autopairs'
     use 'glepnir/dashboard-nvim'
     use 'petertriho/nvim-scrollbar'
+    use 'williamboman/mason.nvim'
 end
 
 function M.config()
@@ -39,6 +40,7 @@ function M.config()
     require('core.autopairs')
     require('core.dash')
     require('core.scrollbar')
+    require('core.mason-config')
 end
 
 return M

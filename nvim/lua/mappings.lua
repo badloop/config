@@ -27,13 +27,13 @@ map('n', '<leader>ld', '<cmd>lua vim.diagnostic.open_float()<cr>', {})
 
 -- DAP
 map('n', '<leader>db', '<cmd>lua require("dap").toggle_breakpoint()<cr>', {})
+map('n', '<leader>dc', '<cmd>lua require("dap").set_breakpoint(vim.fn.input("Condition: "))<cr>', {})
 map('n', '<leader>ds', '<cmd>lua require("dap").continue()<cr>', {})
 map('n', '<leader>dd', '<cmd>lua require("dapui").toggle()<cr>', {})
 map('n', '<leader>dv', '<cmd>lua require("dap").step_over()<cr>', {})
 map('n', '<leader>di', '<cmd>lua require("dap").step_into()<cr>', {})
 map('n', '<leader>do', '<cmd>lua require("dap").step_out()<cr>', {})
-map('n', '<leader>dc', '<cmd>lua require("dap").close()<cr>', {})
-
+map('n', '<leader>dt', '<cmd>lua require("dap").terminate()<cr>', {})
 
 -- Packer
 map('n', '<leader>ps', '<cmd>PackerSync<cr>', {})
@@ -68,4 +68,3 @@ map('n', '<leader>gb', '<cmd>Telescope git_branches<cr>', {})
 map('n', '<leader>gs', '<cmd>Gdiffsplit<cr>', {})
 map('n', '<leader>gp', '<cmd>Gitsigns preview_hunk<cr>', {})
 map('n', '<leader>gr', '<cmd>Gitsigns reset_hunk<cr>', {})
-

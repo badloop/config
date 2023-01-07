@@ -1,3 +1,6 @@
+-- go.nvim
+require('go').setup()
+
 -- gopls
 require('lspconfig').gopls.setup {
     capabilities = vim.lsp.protocol.make_client_capabilities(),

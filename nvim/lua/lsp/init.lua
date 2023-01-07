@@ -3,6 +3,7 @@ function M.load(use)
     use 'neovim/nvim-lspconfig'
     use 'folke/neodev.nvim'
     use 'jose-elias-alvarez/null-ls.nvim'
+    use 'ray-x/go.nvim'
 end
 
 function M.config()
