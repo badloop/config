@@ -1,9 +1,9 @@
-local adapters = require('dap').adapters
+local adapters = require("dap").adapters
 
 adapters.python = {
-    type = 'executable';
-    command = os.getenv('HOME') .. '/.pyenv/versions/debugpy/bin/python';
-    args = { '-m', 'debugpy.adapter' };
+	type = "executable",
+	command = os.getenv("HOME") .. "/.pyenv/versions/debugpy/bin/python",
+	args = { "-m", "debugpy.adapter" },
 }
 
 -- adapters.go = function(callback)
@@ -42,13 +42,13 @@ adapters.python = {
 --
 
 adapters.go = {
-    type = "server",
-    port = 38697,
-    executable = {
-        command = "dlv",
-        args = { "dap", "-l", "127.0.0.1:38697" },
-    },
-    options = {
-        initialize_timeout_sec = 20,
-    },
+	type = "server",
+	port = 38697,
+	executable = {
+		command = "dlv",
+		args = { "dap", "-l", "127.0.0.1:38697" },
+	},
+	options = {
+		initialize_timeout_sec = 20,
+	},
 }
