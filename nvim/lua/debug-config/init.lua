@@ -2,6 +2,7 @@ local M = {}
 function M.load(use)
     use 'mfussenegger/nvim-dap'
     use 'rcarriga/nvim-dap-ui'
+    use 'theHamsta/nvim-dap-virtual-text'
 end
 
 function M.config()
@@ -11,6 +12,7 @@ function M.config()
     require('debug-config.adapters')
     require('debug-config.dapui')
     require('debug-config.configurations')
+    require('debug-config.dap-virtual-text')
     vim.fn.sign_define('DapBreakpoint', { text = '', texthl = 'Error' })
 end
 
