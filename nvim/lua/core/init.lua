@@ -27,7 +27,7 @@ function M.load(use)
 	use("glepnir/dashboard-nvim")
 	use("petertriho/nvim-scrollbar")
 	use("theprimeagen/harpoon")
-	use("ray-x/signatures.nvim")
+	use("ray-x/lsp_signature.nvim")
 	use("simrat39/symbols-outline.nvim")
 end
 
